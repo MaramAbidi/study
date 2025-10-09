@@ -1,0 +1,145 @@
+/* styles.css */
+
+/* Reset léger */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Police et fond */
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --accent: #2563eb;      /* bleu principal */
+  --accent-2: #60a5fa;    /* bleu clair */
+  --muted: #6b7280;       /* gris */
+  --success: #10b981;
+  --danger: #ef4444;
+  --radius: 12px;
+  --max-width: 900px;
+}
+
+html, body {
+  height: 100%;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #eef6ff 60%);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Conteneur central */
+.container {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(16,24,40,0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+/* En-tête */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+/* Description / sous-titre */
+.lead {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+/* La zone qui contient le contenu modifiable (maDiv) */
+#maDiv {
+  padding: 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, rgba(37,99,235,0.04), rgba(96,165,250,0.02));
+  border: 1px solid rgba(37,99,235,0.08);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background-color 250ms ease, transform 160ms ease;
+}
+
+/* Texte initial et paragraphe ajoutés */
+#maDiv p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #0b1220;
+}
+
+/* Bouton principal */
+#monBouton {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 16px;
+  font-size: 0.98rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.18);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
+}
+
+/* Hover / active */
+#monBouton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37,99,235,0.20);
+}
+#monBouton:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+/* Boutons secondaires (si tu ajoutes d'autres boutons via JS) */
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Petite zone pour logs console-like (optionnel) */
+.console {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0b12204a; /* léger overlay */
+  color: #0b1220;
+  font-family: monospace;
+  font-size: 0.85rem;
+  max-height: 160px;
+  overflow: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    margin: 18px;
+    padding: 18px;
+    border-radius: 12px;
+  }
+  h1 {
+    font-size: 1.25rem;
+  }
+  #maDiv {
+    min-height: 90px;
+    padding: 14px;
+  }
+  #monBouton {
+    width: 100%;
+    text-align: center;
+  }
+}
